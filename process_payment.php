@@ -6,11 +6,11 @@ error_reporting(E_ALL);
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-$vnp_Returnurl = "https://localhost/TestVNPay/test.php";
-$vnp_TmnCode = "WTL0XMRT"; // Website ID in VNPAY
-$vnp_HashSecret = "Y0XCNOCNR895HJZKSLGD0OCZ93YQ5V2T"; // Secret key
+$vnp_Returnurl = "https://localhost/TestVNPay/vnpay_ipn.php";
+$vnp_TmnCode = "WTL0XMRT"; 
+$vnp_HashSecret = "Y0XCNOCNR895HJZKSLGD0OCZ93YQ5V2T"; 
 
-$vnp_TxnRef = $_POST['order_id'] ?? ''; // Order ID
+$vnp_TxnRef = $_POST['order_id'] ?? '';
 $vnp_OrderInfo = $_POST['order_desc'] ?? '';
 $vnp_OrderType = $_POST['order_type'] ?? '';
 $vnp_Amount = isset($_POST['amount']) ? $_POST['amount'] * 100 : 0;
